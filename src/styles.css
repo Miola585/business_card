@@ -193,14 +193,6 @@ h1.long-name .person-name {
   line-height: 1.65;
 }
 
-.primary-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 34px;
-}
-
-
 .button {
   display: inline-flex;
   gap: 11px;
@@ -408,6 +400,40 @@ h1.long-name .person-name {
   width: 16px;
   height: 16px;
   color: rgba(255, 255, 255, 0.45);
+}
+
+.card-contact-save {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr) 17px;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  min-height: 58px;
+  padding: 10px 14px;
+  color: var(--ink);
+  text-align: left;
+  border: 0;
+  border-radius: 5px;
+  background: #e8d7b2;
+  cursor: pointer;
+  transition: 180ms ease;
+}
+
+.card-contact-save:hover {
+  background: #f0dfba;
+  transform: translateY(-1px);
+}
+
+.card-contact-save > span:nth-child(2) {
+  display: block;
+}
+
+.card-contact-save strong {
+  font-size: 13px;
+}
+
+.card-contact-save > .icon:last-child {
+  opacity: 0.55;
 }
 
 .card-footer {
@@ -656,6 +682,7 @@ footer {
   .contact-card {
     max-width: 520px;
     justify-self: start;
+    order: -1;
   }
 }
 
@@ -697,10 +724,6 @@ footer {
   .role-line {
     flex-wrap: wrap;
     font-size: 15px;
-  }
-
-  .primary-actions {
-    display: grid;
   }
 
   .button {
@@ -789,10 +812,6 @@ footer {
   .bio {
     font-size: 16px;
     line-height: 1.55;
-  }
-
-  .primary-actions {
-    margin-top: 28px;
   }
 
   .button {
@@ -911,10 +930,6 @@ footer {
   .bio {
     font-size: 16px;
     line-height: 1.5;
-  }
-
-  .primary-actions {
-    margin-top: 24px;
   }
 
   .location {

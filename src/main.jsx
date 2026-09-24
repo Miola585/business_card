@@ -14,15 +14,16 @@ const icons = {
       <path d="M7 3v3m10-3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v14H4V6a1 1 0 0 1 1-1Z" />
     </svg>
   ),
+  education: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m3 10 9-5 9 5-9 5-9-5Z" />
+      <path d="M7 12.5V17c2.8 2 7.2 2 10 0v-4.5M21 10v6" />
+    </svg>
+  ),
   contact: (
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <circle cx="9" cy="8" r="3" />
       <path d="M3.5 19a5.5 5.5 0 0 1 11 0M18 8v6m-3-3h6" />
-    </svg>
-  ),
-  linkedin: (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M7 9v11M7 5v.01M11 20V9m0 5a4 4 0 0 1 8 0v6" />
     </svg>
   ),
   phone: (
@@ -173,25 +174,9 @@ function App() {
             <span className="person-name">{profile.name.replace(/-/g, "‑")}.</span>
           </h1>
           <p className="role-line">
-            {profile.role} <i /> {profile.company}
+            {profile.company}
           </p>
           <p className="bio">{profile.bio}</p>
-
-          <div className="primary-actions">
-            <button
-              className="button button-dark"
-              type="button"
-              onClick={() => setShowContactPreview(true)}
-            >
-              <Icon name="contact" />
-              Save contact
-            </button>
-            <a className="button button-light" href={profile.finLiteracy} target="_blank" rel="noreferrer">
-              <Icon name="calendar" />
-              Financial Literacy Workshops
-              <Icon name="arrow" />
-            </a>
-          </div>
 
           <div className="location">
             <Icon name="pin" />
@@ -245,15 +230,6 @@ function App() {
               <Icon name="arrow" />
             </a>
 
-            <a className="contact-row" href={profile.linkedin} target="_blank" rel="noreferrer">
-              <span className="row-icon"><Icon name="linkedin" /></span>
-              <span className="row-copy">
-                <small>LinkedIn</small>
-                <strong>Connect with me</strong>
-              </span>
-              <Icon name="arrow" />
-            </a>
-
             <a className="contact-row" href={profile.scheduler} target="_blank" rel="noreferrer">
               <span className="row-icon"><Icon name="calendar" /></span>
               <span className="row-copy">
@@ -262,7 +238,28 @@ function App() {
               </span>
               <Icon name="arrow" />
             </a>
+
+            <a className="contact-row" href={profile.finLiteracy} target="_blank" rel="noreferrer">
+              <span className="row-icon"><Icon name="education" /></span>
+              <span className="row-copy">
+                <small>Financial literacy</small>
+                <strong>Register for a session</strong>
+              </span>
+              <Icon name="arrow" />
+            </a>
           </div>
+
+          <button
+            className="card-contact-save"
+            type="button"
+            onClick={() => setShowContactPreview(true)}
+          >
+            <Icon name="contact" />
+            <span>
+              <strong>Save contact</strong>
+            </span>
+            <Icon name="arrow" />
+          </button>
 
           <div className="card-footer">
             <span>{profile.company}</span>
