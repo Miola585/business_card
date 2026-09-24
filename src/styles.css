@@ -298,9 +298,15 @@ h1.long-name .person-name {
   object-position: center;
 }
 
+.portrait-photo-hidden,
+.portrait-initials-hidden {
+  display: none;
+}
+
 .portrait-initials {
   position: absolute;
   inset: 0;
+  display: grid;
   align-items: center;
   justify-content: center;
   color: var(--navy);

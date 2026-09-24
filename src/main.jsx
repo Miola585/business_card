@@ -192,15 +192,14 @@ function App() {
                 src={profile.photo}
                 alt={profile.photoAlt}
                 onError={(event) => {
-                  event.currentTarget.style.display = "none";
-                  event.currentTarget.nextElementSibling.style.display = "grid";
+                  event.currentTarget.classList.add("portrait-photo-hidden");
+                  event.currentTarget.nextElementSibling.classList.remove("portrait-initials-hidden");
                 }}
               />
             ) : null}
             <div
-              className="portrait-initials"
               aria-hidden="true"
-              style={{ display: profile.photo ? "none" : "grid" }}
+              className={`portrait-initials ${profile.photo ? "portrait-initials-hidden" : ""}`}
             >
               {profile.initials}
             </div>
